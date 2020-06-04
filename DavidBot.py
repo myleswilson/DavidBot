@@ -33,4 +33,19 @@ async def on_ready():
 async def test(message):
     await message.channel.send('Working!')
 
+# Allows the user to talk to DavidBot. Uses ChatterBot.
+@client.command(name = '.', help = 'Allows you to talk with DavidBot.')
+async def smart(ctx, arg):
+    bot = ChatBot('DavidBot')
+
+    conv = open('chats.txt', 'r').readlines()
+    trainer = ListTrainer(bot);
+    trainer.train(conv)
+
+    bot_input = bot.get_response(arg)
+    response = bot.get_response(bot_input)
+    final_msg = response
+
+    await ctx.channel.send(final_msg)
+
 client.run(TOKEN)
