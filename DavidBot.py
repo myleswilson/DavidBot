@@ -1,5 +1,6 @@
 '''
  bot.py
+ Name: DavidBot
  Runs on: Python 3
  Author: Myles
  Date of creation: 06/3/2020
@@ -37,7 +38,7 @@ async def test(message):
 @client.command(name = '=', help = 'Allows you to talk with DavidBot.')
 async def smart(ctx, *, arg):
     bot = ChatBot('DavidBot')
-    
+
     bot_input = bot.get_response(arg)
     response = bot.get_response(bot_input)
     final_msg = response
