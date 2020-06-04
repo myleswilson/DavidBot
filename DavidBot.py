@@ -1,10 +1,10 @@
 '''
- bot.py
- Name: DavidBot
- Runs on: Python 3
- Author: Myles
- Date of creation: 06/3/2020
- Last update: 06/3/2020
+bot.py
+    Name: DavidBot
+    Runs on: Python 3.8.2
+    Author: Myles
+    Date of creation: 06/3/2020
+    Last update: 06/3/2020
 '''
 
 import os
