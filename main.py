@@ -3,13 +3,16 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-bot = ChatBot('DavidBot')
-
-conv = open('chats.txt', 'r').readlines()
-
-trainer = ListTrainer(bot);
-
-trainer.train(conv)
+bot = ChatBot('DavidBot')(
+    "ChatBot Input"
+    storage_adapter = "chatterbot.storage.SQLStorageAdapter"
+    logic_adapters=[
+        "cahtterbot.logic.BestMatch"
+    ],
+    input_adapter="chatterbot.input.VariableInputTypeAdapter"
+    output_adapter="chatterbot.output.VariableOutputTypeAdapter"
+    database_uri='sqlite:///database.db'
+)
 
 while True:
     try:
